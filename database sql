@@ -1,0 +1,82 @@
+CREATION OF DATABASE TABLES: 
+CREATE TABLE staff ( 
+    staff_id INT PRIMARY KEY, 
+    staff_mobile VARCHAR(15) UNIQUE, 
+    staff_username VARCHAR(50) UNIQUE 
+); 
+CREATE TABLE patient ( 
+    patient_id INT PRIMARY KEY, 
+    patient_name VARCHAR(100), 
+    patient_mail VARCHAR(100) UNIQUE, 
+    patient_number VARCHAR(15), 
+    street_number VARCHAR(20), 
+    postal_code VARCHAR(10), 
+    city VARCHAR(50) 
+); 
+CREATE TABLE doctor ( 
+    doc_id INT PRIMARY KEY, 
+    doctor_mobile VARCHAR(15) UNIQUE, 
+    doctor_name VARCHAR(100), 
+    doctor_address VARCHAR(255) 
+); 
+CREATE TABLE bookings ( 
+    booking_id INT PRIMARY KEY, 
+    booking_description VARCHAR(255), 
+  
+9 
+ 
+    booking_type VARCHAR(50)); 
+CREATE TABLE Registration ( 
+    RegistrationID INT PRIMARY KEY, 
+    Name VARCHAR(255) NOT NULL, 
+    Age INT, 
+    Gender VARCHAR(10) 
+); 
+CREATE TABLE StaffLogin ( 
+    StaffUsername VARCHAR(50) PRIMARY KEY, 
+    StaffPassword VARCHAR(255) NOT NULL 
+); 
+CREATE TABLE PatientLogin ( 
+    Pat_Login_ID INT PRIMARY KEY, 
+    Pat_Username VARCHAR(50) NOT NULL, 
+    Pat_Password VARCHAR(255) NOT NULL 
+); 
+CREATE TABLE DoctorLogin ( 
+    Doc_Login_ID INT PRIMARY KEY, 
+    Doc_Username VARCHAR(50) NOT NULL, 
+    Doc_Password VARCHAR(255) NOT NULL 
+); 
+CREATE TABLE AppointmentHistory ( 
+    Appointment_ID INT PRIMARY KEY, 
+    Appointment_Date DATE NOT NULL, 
+    Appointment_Desc VARCHAR(255) 
+); 
+  
+10 
+ 
+ 
+CREATE TABLE AppointmentFees ( 
+    App_Fee_ID INT PRIMARY KEY, 
+    App_Fee_Amount DECIMAL(10, 2) NOT NULL, 
+    App_Fee_Type VARCHAR(50) NOT NULL, 
+    App_Fee_Total DECIMAL(10, 2) NOT NULL); 
+CREATE TABLE MedicalTest ( 
+    Test_ID INT PRIMARY KEY, 
+    Test_Date DATE NOT NULL, 
+    Test_Desc VARCHAR(255) NOT NULL); 
+CREATE TABLE TestFees ( 
+    Test_Fee_ID INT PRIMARY KEY, 
+    Test_Fee_Amount DECIMAL(10, 2) NOT NULL, 
+    Test_Fee_Type VARCHAR(50) NOT NULL, 
+    Test_Fee_Total DECIMAL(10, 2) NOT NULL); 
+CREATE TABLE PatientSchedules ( 
+    Pat_Sch_ID INT PRIMARY KEY, 
+    Pat_Sch_Type VARCHAR(50), 
+    Pat_Sch_Desc VARCHAR(255)); 
+CREATE TABLE DoctorSchedules ( 
+    Doc_Sch_ID INT PRIMARY KEY, 
+    Doc_Sch_Type VARCHAR(50), 
+    Doc_Sch_Desc VARCHAR(255)); 
+CREATE TABLE Prescription ( 
+    Report_ID INT PRIMARY KEY, 
+    Report_Desc VARCHAR(255) 
